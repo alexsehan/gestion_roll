@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "52517611289",
+    "firebase_url": "https://gestion-roll-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "gestion-roll",
+    "storage_bucket": "gestion-roll.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:52517611289:android:d05b539511d5fd210dc788",
+        "android_client_info": {
+          "package_name": "com.example.gestion_roll"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "52517611289-diurbbqhse2bucea0i67jiqou5bl55oi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgAj4ueDMQyv2Y5PJdZyQEXJlwKzZB6ho"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "52517611289-diurbbqhse2bucea0i67jiqou5bl55oi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

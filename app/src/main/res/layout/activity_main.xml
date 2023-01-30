@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:passwordToggleEnabled="false"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch_premiere_connection"
+        android:layout_width="210dp"
+        android:layout_height="51dp"
+        android:fontFamily="@font/dm_sans"
+        android:text="@string/premiere_connection"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bouton_help_prem_connec"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.402"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bouton_help_prem_connec"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/texte_titre"
+        android:layout_width="211dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/dm_sans"
+        android:text="@string/texte_titre"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/texte_login"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
+        android:fontFamily="@font/dm_sans"
+        android:labelFor="@id/login_connexion"
+        android:gravity="center_vertical"
+        android:text="@string/texte_login"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/button_help_login"
+        app:layout_constraintStart_toStartOf="@+id/login_connexion"
+        app:layout_constraintTop_toTopOf="@+id/button_help_login" />
+
+    <EditText
+        android:id="@+id/login_connexion"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints="username"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texte_login"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <!--<com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/mdp_connexion"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints="password"
+        android:inputType="textPassword"
+        app:passwordToggleEnabled = "true"
+        android:labelFor="@id/mdp_connexion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texte_mdp"
+        /> -->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/xml_mdp_connexion"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        app:boxBackgroundMode="filled"
+        app:boxBackgroundColor="?android:attr/colorBackground"
+        app:passwordToggleEnabled = "true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texte_mdp">
+
+        <EditText
+            android:id="@+id/mdp_connexion"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:autofillHints="password"
+            android:inputType="textPassword"
+            tools:ignore="SpeakableTextPresentCheck"
+            />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/button_connecter"
+        android:layout_width="199dp"
+        android:layout_height="60dp"
+        android:text="@string/texte_bouton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.853"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/xml_mdp_connexion" />
+
+    <ImageButton
+        android:id="@+id/button_help_login"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@null"
+        android:contentDescription="@string/point_d_interrogation"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/texte_login"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.173"
+        app:srcCompat="@drawable/ic_baseline_help_outline_24"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <ImageButton
+        android:id="@+id/bouton_help_mdp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="72dp"
+        android:background="@null"
+        android:contentDescription="@string/point_d_interrogation"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/texte_mdp"
+        app:layout_constraintTop_toBottomOf="@+id/button_help_login"
+        app:layout_constraintVertical_bias="0.019"
+        app:srcCompat="@drawable/ic_baseline_help_outline_24" />
+
+    <ImageButton
+        android:id="@+id/bouton_help_prem_connec"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="72dp"
+        android:background="@null"
+        android:contentDescription="@string/point_d_interrogation"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/texte_mdp"
+        app:layout_constraintTop_toBottomOf="@+id/button_help_login"
+        app:layout_constraintVertical_bias="0.34"
+        app:srcCompat="@drawable/ic_baseline_help_outline_24" />
+
+    <TextView
+        android:id="@+id/texte_mdp"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
+        android:fontFamily="@font/dm_sans"
+        android:text="@string/texte_mdp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="20sp"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/bouton_help_mdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bouton_help_mdp"
+        app:layout_constraintVertical_bias="0.533" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">gestion_roll</string>
+    <string name="texte_titre">Connection</string>
+    <string name="texte_login">Login</string>
+    <string name="texte_mdp">Mot-de-passe</string>
+    <string name="texte_bouton">Se connecter !</string>
+    <string name="bravo_connecter">Yess t\'es connecté !</string>
+    <string name="id">ID</string>
+    <string name="yes">oui</string>
+    <string name="no">non</string>
+    <string name="put_break">Vous ne pouvez pas accéder à l\'application car vous avez été mis en pause. Veuillez contacter un administrateur pour vous réactiver.</string>
+
+    <string name="texte_titre_nv_client">Nouveau magasin</string>
+    <string name="texte_type_nv_client">Nom du client</string>
+    <string name="texte_ville_nv_client">Ville du client</string>
+    <string name="texte_bouton_nv_client">Enregistrer</string>
+    <string name="point_d_interrogation">point d\'interrogation</string>
+
+    <!--  NEW USER -->
+    <string name="title_activity_new_user">Nouvel utilisateur</string>
+    <string name="text_login_new_user">Login</string>
+    <string name="mode_administrateur_nv_user">Mode administrateur</string>
+    <string name="premiere_connection">Première connection</string>
+    <string name="nouvel_utilisateur">Nouvel utilisateur</string>
+    <string name="d_connection">Déconnection</string>
+    <string name="logo">logo</string>
+    <string name="text_descriptor_new_user">Le mot de passe du nouvel utilisateur devra être choisi par celui ci. Pour cela, lors de sa première connection, il devra mettre son mot de passe et spécifier \"1ère connection\".</string>
+    <string name="user_management">Gestion des utilisateurs</string>
+    <string name="text_login_user_management">Nom </string>
+    <string name="variable_login_user_management">Untel</string>
+    <string name="variable_isAdmin_user_management">oui</string>
+    <string name="text_isAdmin_user_management">Administrateur ?</string>
+    <string name="texte_titre_user_management">Gestion des utilisateurs</string>
+    <string name="line">_______________________________________________________________________________</string>
+    <string name="new_client">nouveau client</string>
+    <string name="text_isBreak_user_management">Mis en pause ?</string>
+    <string name="mv_plestin">MV PLESTIN</string>
+    <string name="plestin_les_greves">PLESTIN-LES-GREVES</string>
+    <string name="text_title_new_delivery">Nouvelle livraison</string>
+    <string name="button_new_delivery">Nouvelle livraison</string>
+    <string name="choose">Choisir</string>
+    <string name="clic_button_new_delivery">Cliquez sur le bouton pour choisir</string>
+    <string name="city">Entrez une ville</string>
+    <string name="find_client">Trouver un client</string>
+    <string name="city_text">Ville</string>
+    <string name="shop_name">Magasin : </string>
+    <string name="no_client_selected">AUCUN CLIENT</string>
+    <string name="date">Date :</string>
+    <string name="tag">TAG :</string>
+    <string name="ordinaire">ORDINAIRE :</string>
+    <string name="cc">CC :</string>
+    <string name="etag_re">ETAGERE :</string>
+    <string name="rehausse">REHAUSSE :</string>
+    <string name="_0">0</string>
+    <string name="validate">Valider</string>
+    <string name="no_user_selected">AUCUN CHAUFFEUR</string>
+    <string name="choose_client">CHOISIR CLIENT</string>
+    <string name="choose_user">CHOISIR LIVREUR</string>
+    <string name="driver">Entrez un chauffeur</string>
+    <string name="find_driver">Trouver un chauffeur</string>
+
+</resources>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".delivery.NewDelivery">
+
+    <Button
+        android:id="@+id/button_validate_new_delivery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/validate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.898"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.893"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <Button
+        android:id="@+id/button_user_new_delivery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="@string/choose_user"
+        app:layout_constraintBottom_toBottomOf="@+id/text_user_new_delivery_management"
+        app:layout_constraintStart_toEndOf="@+id/text_user_new_delivery_management"
+        app:layout_constraintTop_toTopOf="@+id/text_user_new_delivery_management"
+        app:layout_constraintVertical_bias="0.571"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/client_name_new_delivery_management"
+        android:layout_width="130dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="40dp"
+        android:fontFamily="@font/dm_sans"
+        android:text="@string/no_client_selected"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.208" />
+
+    <Button
+        android:id="@+id/button_client_new_delivery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/choose_client"
+        app:layout_constraintBottom_toBottomOf="@+id/client_name_new_delivery_management"
+        app:layout_constraintStart_toEndOf="@+id/client_name_new_delivery_management"
+        app:layout_constraintStart_toStartOf="@+id/button_user_new_delivery"
+        app:layout_constraintTop_toTopOf="@+id/client_name_new_delivery_management"
+        app:layout_constraintVertical_bias="0.318"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/text_user_new_delivery_management"
+        android:layout_width="168dp"
+        android:layout_height="27dp"
+        android:fontFamily="@font/dm_sans"
+        android:text="@string/no_user_selected"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/client_name_new_delivery_management"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.285" />
+
+    <TextView
+        android:id="@+id/text_title_new_delivery"
+        android:layout_width="211dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/dm_sans"
+        android:text="@string/text_title_new_delivery"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/date_new_delivery"
+        android:layout_width="156dp"
+        android:layout_height="50dp"
+        android:layout_alignBaseline="@id/text_date_new_delivery_management"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="date"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_date_new_delivery_management"
+        app:layout_constraintStart_toStartOf="@+id/tag_new_delivery"
+        app:layout_constraintTop_toTopOf="@+id/text_date_new_delivery_management"
+        app:layout_constraintVertical_bias="0.741"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/text_date_new_delivery_management"
+        android:layout_width="71dp"
+        android:layout_height="19dp"
+        android:fontFamily="@font/dm_sans"
+        android:labelFor="@+id/date_new_delivery"
+        android:text="@string/date"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/client_name_new_delivery_management"
+        app:layout_constraintTop_toBottomOf="@+id/client_name_new_delivery_management"
+        app:layout_constraintVertical_bias="0.201" />
+
+    <TextView
+        android:id="@+id/text_tag_new_delivery"
+        android:layout_width="98dp"
+        android:layout_height="22dp"
+        android:fontFamily="@font/dm_sans"
+        android:labelFor="@+id/tag_new_delivery"
+        android:text="@string/tag"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/text_date_new_delivery_management"
+        app:layout_constraintTop_toBottomOf="@+id/date_new_delivery"
+        app:layout_constraintVertical_bias="0.096" />
+
+    <TextView
+        android:id="@+id/text_eta_new_delivery"
+        android:layout_width="98dp"
+        android:layout_height="22dp"
+        android:fontFamily="@font/dm_sans"
+        android:labelFor="@+id/tag_new_delivery"
+        android:text="@string/etag_re"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/text_date_new_delivery_management"
+        app:layout_constraintTop_toBottomOf="@+id/text_ord_new_delivery2"
+        app:layout_constraintVertical_bias="0.18" />
+
+    <EditText
+        android:id="@+id/reh_new_delivery"
+        android:layout_width="156dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:ems="10"
+        android:hint="@string/_0"
+        android:importantForAutofill="no"
+        android:inputType="numberSigned"
+        android:textColorHint="#757575"
+        app:layout_constraintBottom_toBottomOf="@+id/text_reh_new_delivery"
+        app:layout_constraintStart_toEndOf="@+id/text_reh_new_delivery"
+        app:layout_constraintTop_toTopOf="@+id/text_reh_new_delivery"
+        app:layout_constraintVertical_bias="0.846"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/text_reh_new_delivery"
+        android:layout_width="98dp"
+        android:layout_height="22dp"
+        android:fontFamily="@font/dm_sans"
+        android:labelFor="@+id/tag_new_delivery"
+        android:text="@string/rehausse"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/text_date_new_delivery_management"
+        app:layout_constraintTop_toBottomOf="@+id/text_eta_new_delivery"
+        app:layout_constraintVertical_bias="0.124" />
+
+    <EditText
+        android:id="@+id/eta_new_delivery"
+        android:layout_width="156dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:ems="10"
+        android:hint="@string/_0"
+        android:importantForAutofill="no"
+        android:inputType="numberSigned"
+        app:layout_constraintBottom_toBottomOf="@+id/text_eta_new_delivery"
+        app:layout_constraintStart_toEndOf="@+id/text_eta_new_delivery"
+        app:layout_constraintTop_toTopOf="@+id/text_eta_new_delivery"
+        app:layout_constraintVertical_bias="0.73"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <EditText
+        android:id="@+id/tag_new_delivery"
+        android:layout_width="156dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:ems="10"
+        android:hint="@string/_0"
+        android:importantForAutofill="no"
+        android:inputType="numberSigned"
+        app:layout_constraintBottom_toBottomOf="@+id/text_tag_new_delivery"
+        app:layout_constraintStart_toEndOf="@+id/text_tag_new_delivery"
+        app:layout_constraintTop_toTopOf="@+id/text_tag_new_delivery"
+        app:layout_constraintVertical_bias="0.692"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/text_cc_new_delivery"
+        android:layout_width="98dp"
+        android:layout_height="22dp"
+        android:fontFamily="@font/dm_sans"
+        android:labelFor="@+id/cc_new_delivery"
+        android:text="@string/cc"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/text_tag_new_delivery"
+        app:layout_constraintTop_toBottomOf="@+id/text_tag_new_delivery"
+        app:layout_constraintVertical_bias="0.064" />
+
+    <EditText
+        android:id="@+id/cc_new_delivery"
+        android:layout_width="156dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:ems="10"
+        android:hint="@string/_0"
+        android:importantForAutofill="no"
+        android:inputType="numberSigned"
+        app:layout_constraintBottom_toBottomOf="@+id/text_cc_new_delivery"
+        app:layout_constraintStart_toEndOf="@+id/text_cc_new_delivery"
+        app:layout_constraintTop_toTopOf="@+id/text_cc_new_delivery"
+        app:layout_constraintVertical_bias="0.653"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <EditText
+        android:id="@+id/ord_new_delivery"
+        android:layout_width="156dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:hint="@string/_0"
+        android:importantForAutofill="no"
+        android:inputType="numberSigned"
+        app:layout_constraintBottom_toBottomOf="@+id/text_ord_new_delivery2"
+        app:layout_constraintStart_toEndOf="@+id/text_ord_new_delivery2"
+        app:layout_constraintTop_toTopOf="@+id/text_ord_new_delivery2"
+        app:layout_constraintVertical_bias="0.653"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/text_ord_new_delivery2"
+        android:layout_width="102dp"
+        android:layout_height="22dp"
+        android:fontFamily="@font/dm_sans"
+        android:labelFor="@+id/ord_new_delivery"
+        android:text="@string/ordinaire"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/text_cc_new_delivery"
+        app:layout_constraintTop_toBottomOf="@+id/text_cc_new_delivery"
+        app:layout_constraintVertical_bias="0.07" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

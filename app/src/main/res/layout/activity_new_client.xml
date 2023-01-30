@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".client.NewClient">
+
+
+    <TextView
+        android:id="@+id/texte_titre"
+        android:layout_width="211dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/dm_sans"
+        android:text="@string/texte_titre_nv_client"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/texte_type_nv_client"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="88dp"
+        android:fontFamily="@font/dm_sans"
+        android:labelFor="@id/type_nv_client"
+        android:text="@string/texte_type_nv_client"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texte_titre" />
+
+    <EditText
+        android:id="@+id/type_nv_client"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints="username"
+        android:hint="@string/mv_plestin"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texte_type_nv_client" />
+
+    <TextView
+        android:id="@+id/texte_ville_nv_client"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/dm_sans"
+        android:labelFor="@id/ville_nv_client"
+        android:text="@string/texte_ville_nv_client"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/type_nv_client" />
+
+    <EditText
+        android:id="@+id/ville_nv_client"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="12dp"
+        android:inputType="text"
+        android:hint="@string/plestin_les_greves"
+        android:ems="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texte_ville_nv_client"
+        android:importantForAutofill="no" />
+
+    <Button
+        android:id="@+id/button_new_user"
+        android:layout_width="199dp"
+        android:layout_height="60dp"
+        android:text="@string/texte_bouton_nv_client"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.839"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ville_nv_client"
+        app:layout_constraintVertical_bias="0.492" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
