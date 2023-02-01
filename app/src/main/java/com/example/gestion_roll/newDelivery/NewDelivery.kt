@@ -1,4 +1,4 @@
-package com.example.gestion_roll.delivery
+package com.example.gestion_roll.newDelivery
 
 import android.app.Activity
 import android.app.DatePickerDialog
@@ -106,7 +106,7 @@ class NewDelivery : AppCompatActivity() {
 
         //------------------ CHOOSE USER ------------------
         var driverData: Users = getUserFromID()
-        textUser.text = driverData.Login
+        textUser.text = driverData.Login.uppercase()
 
         val getDriver = registerForActivityResult(ActivityResultContracts.StartActivityForResult()
         ) { result ->
@@ -117,7 +117,7 @@ class NewDelivery : AppCompatActivity() {
                     @Suppress("DEPRECATION", "UNREACHABLE_CODE")
                     result.data?.getSerializableExtra("EXTRA_RESULT") as Users
                 }
-                textUser.text = driverData.Login
+                textUser.text = driverData.Login.uppercase()
             }
         }
 

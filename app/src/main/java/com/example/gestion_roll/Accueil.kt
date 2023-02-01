@@ -43,19 +43,6 @@ class Accueil : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
-        /*val currentUser = auth.currentUser
-        if(currentUser != null) {
-            isAdmin { list ->
-                if(list[0]){
-                    if (list[1]) {
-                        startActivity(Intent(this, AccueilAdmin::class.java))
-                    }
-                }
-            }
-        } else {
-            startActivity(Intent(this, MainActivity::class.java))
-        }*/
         connection(this)
     }
 }

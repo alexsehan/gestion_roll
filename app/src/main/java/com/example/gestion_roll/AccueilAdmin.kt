@@ -3,10 +3,9 @@ package com.example.gestion_roll
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gestion_roll.client.NewClient
-import com.example.gestion_roll.delivery.NewDelivery
+import com.example.gestion_roll.newDelivery.NewDelivery
 import com.example.gestion_roll.user.UserManagement
 import com.example.gestion_roll.user.connection
 import com.google.firebase.auth.FirebaseAuth
@@ -24,14 +23,11 @@ class AccueilAdmin : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_accueil_admin)
 
-        val texte : TextView =  findViewById(R.id.text_id)
         val bouton : Button =  findViewById(R.id.button_deco)
         val buttonNewClient : Button =  findViewById(R.id.button_new_user)
         val buttonUserManagement : Button =  findViewById(R.id.button_user_management)
         val buttonNewDelivery : Button =  findViewById(R.id.button_new_delivery)
-
-        val user = auth.currentUser
-        texte.text = user?.email
+        val buttonDeliveryManagement : Button =  findViewById(R.id.button_delivery_management)
 
         bouton.setOnClickListener{
             Firebase.auth.signOut()
@@ -47,6 +43,10 @@ class AccueilAdmin : AppCompatActivity() {
         }
 
         buttonNewDelivery.setOnClickListener{
+            startActivity(Intent(this, NewDelivery::class.java))
+        }
+
+        buttonDeliveryManagement.setOnClickListener{
             startActivity(Intent(this, NewDelivery::class.java))
         }
     }

@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Gestion_roll"
         tools:targetApi="31">
         <activity
-            android:name=".delivery.NewDelivery"
+            android:name=".newDelivery.NewDelivery"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
@@ -73,7 +73,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".delivery.CityDeliveryManagement"
+            android:name=".newDelivery.CityDeliveryManagement"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
@@ -82,7 +82,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".delivery.DriverDeliveryManagement"
+            android:name=".newDelivery.DriverDeliveryManagement"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
