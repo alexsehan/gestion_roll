@@ -17,13 +17,15 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.tasks.await
+import java.io.Serializable
 
-data class Users(
+
+data class Users (
     val Admin: Boolean = false,
     val Break: Boolean = false,
     val ID: String = "",
     val Login: String = ""
-)
+) : Serializable
 
 //retourne true si admin et false sinon
 fun isAdmin(callback: (ArrayList<Boolean>) -> Unit) {
@@ -89,7 +91,7 @@ fun getUsersFromFirestore(search: String?) : List<Users> {
         val result : Query = if(search2==null) {
             query
         } else {
-            query.orderBy("city").startAt(search2)
+            query.orderBy("Login").startAt(search2)
         }
 
         for (document in result.get().await().documents) {
@@ -106,7 +108,6 @@ fun getUsersFromFirestore(search: String?) : List<Users> {
  * @param context Contexte de l'activité appelante (utile pour les redirections)
  */
 fun connection(context: Context) {
-
     runBlocking {
         val query = FirebaseFirestore.getInstance().collection("users").whereEqualTo("ID", Firebase.auth.uid.toString())
         val result = query.get().await()
@@ -142,7 +143,16 @@ fun connection(context: Context) {
     }
 }
 
-
-
-
-
+fun getUserFromID() : Users {
+    var user = Users()
+    runBlocking {
+        val query = FirebaseFirestore.getInstance().collection("users")
+            .whereEqualTo("ID", Firebase.auth.uid.toString())
+        val result = query.get().await()
+        for (document in result.documents) {
+            user = document.toObject(Users::class.java)!!
+            return@runBlocking
+        }
+    }
+    return user
+}

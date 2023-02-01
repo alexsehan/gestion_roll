@@ -9,7 +9,8 @@ import kotlinx.coroutines.tasks.await
 
 data class Client(
     var name: String = "", var city: String = "",
-    var tag : Int = 0, var cc : Int = 0, var ordinaire : Int = 0)
+    var tag : Int = 0, var cc : Int = 0, var ordinaire : Int = 0,
+    var etagere : Int = 0, var rehausse : Int = 0) : java.io.Serializable
 {
     fun putInFirebase(context: Context) {
         val query = FirebaseFirestore.getInstance().collection("clients").document(name)
@@ -34,7 +35,46 @@ data class Client(
             return@runBlocking
         }
     }
+
+
+    /**
+     * Cette fonction permet d'ajouter ou de retirer des rolls/etagères/réhausses sur le compte total du client
+     * @param context Contexte de l'activité appelante (utile pour les toasts)
+     * @param tag nombre de rolls tag ajoutés ou retirés du total
+     * @param cc nombre de rolls cc ajoutés ou retirés du total
+     * @param ordinaire nombre de rolls ordinaires ajoutés ou retirés du total
+     * @param etagere nombre d'étageres ajoutés ou retirés du total
+     * @param rehausse nombre de rehausses ajoutés ou retirés du total
+     */
+    fun addRoll(context: Context, tag: Int, cc : Int, ordinaire: Int, etagere: Int, rehausse: Int) {
+
+        val query = FirebaseFirestore.getInstance().collection("clients").document(name)
+        val batch = FirebaseFirestore.getInstance().batch()
+        query.get().addOnSuccessListener { documents ->
+
+            if (tag != 0) {
+                batch.update(query, "tag", documents["tag"].toString().toInt() + tag)
+            }
+            if (cc != 0) {
+                batch.update(query, "cc", documents["cc"].toString().toInt() + cc)
+            }
+            if (ordinaire != 0) {
+                batch.update(query,"ordinaire",documents["ordinaire"].toString().toInt() + ordinaire)
+            }
+            if (etagere != 0) {
+                batch.update(query, "etagere", documents["etagere"].toString().toInt() + etagere)
+            }
+            if (rehausse != 0) {
+                batch.update(query, "rehausse", documents["rehausse"].toString().toInt() + rehausse)
+            }
+
+            batch.commit().addOnSuccessListener{
+                Toast.makeText(context, "OK", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
 }
+
 
 fun getClientsFromFirestore(search: String?) : List<Client> {
 
@@ -56,5 +96,6 @@ fun getClientsFromFirestore(search: String?) : List<Client> {
     }
     return clients
 }
+
 
 

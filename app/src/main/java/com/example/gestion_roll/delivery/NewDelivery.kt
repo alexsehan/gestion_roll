@@ -3,18 +3,18 @@ package com.example.gestion_roll.delivery
 import android.app.Activity
 import android.app.DatePickerDialog
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.text.SpannableStringBuilder
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gestion_roll.R
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
+import com.example.gestion_roll.client.Client
+import com.example.gestion_roll.user.Users
+import com.example.gestion_roll.user.getUserFromID
 import java.text.DateFormat
 import java.text.DateFormat.getDateInstance
 import java.util.*
@@ -39,6 +39,11 @@ class NewDelivery : AppCompatActivity() {
         val ccText : EditText = findViewById(R.id.cc_new_delivery)
         val ordText : EditText = findViewById(R.id.ord_new_delivery)
 
+        val etaText : EditText = findViewById(R.id.eta_new_delivery)
+        val rehText : EditText = findViewById(R.id.reh_new_delivery)
+
+        val buttonValidate: Button = findViewById(R.id.button_validate_new_delivery)
+
         //------------------ CHOOSE DATE ------------------
 
         val dateFormat = getDateInstance(DateFormat.SHORT, Locale("fr","FR"))
@@ -48,9 +53,10 @@ class NewDelivery : AppCompatActivity() {
         val month = calendar.get(Calendar.MONTH)
         val day = calendar.get(Calendar.DAY_OF_MONTH)
 
-        dateEditText.showSoftInputOnFocus = false
+        var date : Date = calendar.time
 
-        dateEditText.text = SpannableStringBuilder(dateFormat.format(calendar.time))
+        dateEditText.showSoftInputOnFocus = false
+        dateEditText.text = SpannableStringBuilder(dateFormat.format(date))
 
         val datePickerDialog = DatePickerDialog(
             this,
@@ -59,7 +65,9 @@ class NewDelivery : AppCompatActivity() {
                 calendar.set(Calendar.MONTH, m)
                 calendar.set(Calendar.DAY_OF_MONTH, d)
 
-                dateEditText.text = SpannableStringBuilder(dateFormat.format(calendar.time)) //SpannableStringBuilder("$d /${m + 1}/$y")
+                date = calendar.time
+
+                dateEditText.text = SpannableStringBuilder(dateFormat.format(date)) //SpannableStringBuilder("$d /${m + 1}/$y")
             },
             year, month, day
         )
@@ -76,11 +84,18 @@ class NewDelivery : AppCompatActivity() {
 
         //------------------ CHOOSE CLIENT ------------------
 
+        var clientData = Client()
+
         val getClient = registerForActivityResult(ActivityResultContracts.StartActivityForResult()
         ) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
-                val data = result.data?.getStringExtra("EXTRA_RESULT")
-                textClient.text = data
+                clientData = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                    result.data?.getSerializableExtra("EXTRA_RESULT", Client::class.java)!!
+                } else {
+                    @Suppress("DEPRECATION", "UNREACHABLE_CODE")
+                    result.data?.getSerializableExtra("EXTRA_RESULT") as Client
+                }
+                textClient.text = clientData.name
             }
         }
 
@@ -90,25 +105,40 @@ class NewDelivery : AppCompatActivity() {
         }
 
         //------------------ CHOOSE USER ------------------
-
-        val mail = Firebase.auth.currentUser?.email
-        textUser.text = mail.toString().dropLast(11).uppercase()
+        var driverData: Users = getUserFromID()
+        textUser.text = driverData.Login
 
         val getDriver = registerForActivityResult(ActivityResultContracts.StartActivityForResult()
         ) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
-                val data = result.data?.getStringExtra("EXTRA_RESULT")
-                textClient.text = data
+                driverData = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                    result.data?.getSerializableExtra("EXTRA_RESULT", Users::class.java)!!
+                } else {
+                    @Suppress("DEPRECATION", "UNREACHABLE_CODE")
+                    result.data?.getSerializableExtra("EXTRA_RESULT") as Users
+                }
+                textUser.text = driverData.Login
             }
         }
 
         buttonUser.setOnClickListener{
-            Log.d("tag1", "1")
             val intent = Intent(this, DriverDeliveryManagement::class.java)
             getDriver.launch(intent)
         }
 
         //------------------ ROLLS ------------------
 
+        buttonValidate.setOnClickListener{
+
+            fun returnIntCheckNull(editText: EditText) : Int {
+                val value = editText.text.toString()
+                return if (value.isNotEmpty()) {
+                    value.toIntOrNull() ?: 0
+                } else 0
+            }
+
+            Delivery(date, driverData, clientData, returnIntCheckNull(tagText), returnIntCheckNull(ccText),
+                returnIntCheckNull(ordText), returnIntCheckNull(etaText), returnIntCheckNull(rehText)).putInFirebase(this)
+        }
     }
 }

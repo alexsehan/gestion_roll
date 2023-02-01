@@ -27,7 +27,7 @@ class AdapterNewDelivery(val context: Context, private var data: List<Client>, p
         holder.city.text = data[position].name
 
         holder.itemView.setOnClickListener {
-            val data = Intent().putExtra("EXTRA_RESULT", data[position].name)
+            val data = Intent().putExtra("EXTRA_RESULT", data[position]  as java.io.Serializable)
             callback.setResult(data)
         }
     }
@@ -54,7 +54,7 @@ class AdapterNewDeliveryDriver(val context: Context, private var data: List<User
         holder.city.text = data[position].Login
 
         holder.itemView.setOnClickListener {
-            val data = Intent().putExtra("EXTRA_RESULT", data[position].Login)
+            val data = Intent().putExtra("EXTRA_RESULT", data[position] as java.io.Serializable)
             callback.setResult(data)
         }
     }

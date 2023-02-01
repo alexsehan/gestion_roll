@@ -58,5 +58,6 @@
     <string name="choose_user">CHOISIR LIVREUR</string>
     <string name="driver">Entrez un chauffeur</string>
     <string name="find_driver">Trouver un chauffeur</string>
+    <string name="nom">Nom :</string>
 
 </resources>

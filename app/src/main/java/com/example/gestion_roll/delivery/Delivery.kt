@@ -6,16 +6,23 @@ import com.example.gestion_roll.client.Client
 import com.example.gestion_roll.user.Users
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.runBlocking
-import java.util.Date
+import java.util.*
 
 data class Delivery(
-    var id: Long = 0,
     var date: Date = Date(), var livreur: Users = Users(), var client : Client = Client(),
-    var TAG: Number = 0, var CC: Number = 0, var ORDINAIRE: Number = 0) {
-
+    var TAG: Int = 0, var CC: Int = 0, var ORDINAIRE: Int = 0,
+    var ETAGERE: Int = 0, var REHAUSSE: Int = 0) {
 
     fun putInFirebase(context: Context) {
-        val query = FirebaseFirestore.getInstance().collection("livraisons").document(id.toString())
+        if(TAG == 0 && CC == 0 && ORDINAIRE == 0 && ETAGERE == 0 && REHAUSSE == 0) {
+            Toast.makeText(context, "Tous les champs roll sont nuls !", Toast.LENGTH_SHORT).show()
+            return
+        } else if(client.name == "") {
+            Toast.makeText(context, "Pas de client sélectionné !", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val query = FirebaseFirestore.getInstance().collection("Deliveries").document()
 
         runBlocking {
             query.get().addOnSuccessListener { document ->
@@ -25,7 +32,7 @@ data class Delivery(
                 } else {
                     query.set(this@Delivery)
                         .addOnSuccessListener {
-                            Toast.makeText(context, "OK", Toast.LENGTH_SHORT).show()
+                            client.addRoll(context, TAG, CC, ORDINAIRE, ETAGERE, REHAUSSE)
                         }
                         .addOnFailureListener {
                             Toast.makeText(context, "Problem num. 1 NewClient", Toast.LENGTH_SHORT).show()
