@@ -123,6 +123,7 @@ class NewDelivery : AppCompatActivity() {
 
         buttonUser.setOnClickListener{
             val intent = Intent(this, DriverDeliveryManagement::class.java)
+            intent.action = "new_delivery"
             getDriver.launch(intent)
         }
 

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gestion_roll.client.NewClient
+import com.example.gestion_roll.delivery.CityDeliveryManagement
 import com.example.gestion_roll.newDelivery.NewDelivery
 import com.example.gestion_roll.user.UserManagement
 import com.example.gestion_roll.user.connection
@@ -47,7 +48,7 @@ class AccueilAdmin : AppCompatActivity() {
         }
 
         buttonDeliveryManagement.setOnClickListener{
-            startActivity(Intent(this, NewDelivery::class.java))
+            startActivity(Intent(this, CityDeliveryManagement::class.java))
         }
     }
 

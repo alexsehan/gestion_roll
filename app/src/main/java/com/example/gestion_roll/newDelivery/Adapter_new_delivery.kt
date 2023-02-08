@@ -50,6 +50,7 @@ class AdapterNewDeliveryDriver(val context: Context, private var data: List<User
         notifyDataSetChanged()
     }
 
+
     override fun onBindViewHolder(holder: ViewHolderNewDelivery, position: Int) {
         holder.city.text = data[position].Login
 
