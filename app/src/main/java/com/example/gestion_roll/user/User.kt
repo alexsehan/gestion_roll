@@ -8,7 +8,6 @@ import com.example.gestion_roll.Accueil
 import com.example.gestion_roll.AccueilAdmin
 import com.example.gestion_roll.AccueilBreak
 import com.example.gestion_roll.MainActivity
-import com.example.gestion_roll.client.NewClient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -116,21 +115,20 @@ fun connection(context: Context) {
             if (user != null) {
                 if(user.Break) {
                     if(context !is AccueilBreak){
-                        val intent = Intent(context, AccueilBreak::class.java)
-                        startActivity(context, intent, null)
+                        startActivity(context, Intent(context, AccueilBreak::class.java), null)
+                        Toast.makeText(context, "accès refusé", Toast.LENGTH_SHORT).show()
                         return@runBlocking
                     }
                 } else if(user.Admin) {
                     if(context is Accueil){
-                        val intent = Intent(context, AccueilAdmin::class.java)
-                        startActivity(context, intent, null)
+                        startActivity(context, Intent(context, AccueilAdmin::class.java), null)
+                        Toast.makeText(context, "accès refusé", Toast.LENGTH_SHORT).show()
                         return@runBlocking
                     }
                 } else {
-                    if(context is AccueilAdmin || context is UserManagement || context is NewUser ||
-                        context is NewClient){
-                        val intent = Intent(context, Accueil::class.java)
-                        startActivity(context, intent, null)
+                    if(context is AccueilAdmin || context is UserManagement || context is NewUser){
+                        startActivity(context, Intent(context, Accueil::class.java), null)
+                        Toast.makeText(context, "accès refusé", Toast.LENGTH_SHORT).show()
                         return@runBlocking
                     }
                 }

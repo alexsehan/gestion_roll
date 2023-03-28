@@ -9,17 +9,12 @@ import com.example.gestion_roll.delivery.CityDeliveryManagement
 import com.example.gestion_roll.newDelivery.NewDelivery
 import com.example.gestion_roll.user.UserManagement
 import com.example.gestion_roll.user.connection
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 class AccueilAdmin : AppCompatActivity() {
 
-    private lateinit var auth: FirebaseAuth
-
     override fun onCreate(savedInstanceState: Bundle?) {
-
-        auth = Firebase.auth
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_accueil_admin)

@@ -6,6 +6,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.text.SpannableStringBuilder
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -15,6 +16,7 @@ import com.example.gestion_roll.R
 import com.example.gestion_roll.client.Client
 import com.example.gestion_roll.user.Users
 import com.example.gestion_roll.user.getUserFromID
+import com.example.gestion_roll.user.isAdmin
 import java.text.DateFormat
 import java.text.DateFormat.getDateInstance
 import java.util.*
@@ -121,6 +123,16 @@ class NewDelivery : AppCompatActivity() {
             }
         }
 
+        isAdmin { list ->
+            if(list[0]){
+                if (list[1]) {
+                    buttonUser.visibility = View.VISIBLE
+                } else {
+                    buttonUser.visibility = View.GONE
+                }
+            }
+        }
+
         buttonUser.setOnClickListener{
             val intent = Intent(this, DriverDeliveryManagement::class.java)
             intent.action = "new_delivery"
@@ -138,7 +150,7 @@ class NewDelivery : AppCompatActivity() {
                 } else 0
             }
 
-            Delivery(date, driverData, clientData, returnIntCheckNull(tagText), returnIntCheckNull(ccText),
+            Delivery(date, driverData.Login, clientData.name, returnIntCheckNull(tagText), returnIntCheckNull(ccText),
                 returnIntCheckNull(ordText), returnIntCheckNull(etaText), returnIntCheckNull(rehText)).putInFirebase(this)
         }
     }

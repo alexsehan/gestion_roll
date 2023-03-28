@@ -3,9 +3,10 @@ package com.example.gestion_roll
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gestion_roll.client.NewClient
+import com.example.gestion_roll.delivery.CityDeliveryManagement
+import com.example.gestion_roll.newDelivery.NewDelivery
 import com.example.gestion_roll.user.connection
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -23,21 +24,26 @@ class Accueil : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_accueil)
 
-        val texte : TextView =  findViewById(R.id.text_id)
         val bouton : Button =  findViewById(R.id.button_deco)
         val buttonNewClient : Button =  findViewById(R.id.button_new_user)
+        val buttonNewDelivery : Button =  findViewById(R.id.button_new_delivery)
+        val buttonDeliveryManagement : Button =  findViewById(R.id.button_delivery_management)
 
-        val user = auth.currentUser
-        texte.text = user?.email
+        bouton.setOnClickListener{
+            Firebase.auth.signOut()
+            startActivity(Intent(this, MainActivity::class.java))
+        }
 
         buttonNewClient.setOnClickListener{
             startActivity(Intent(this, NewClient::class.java))
         }
 
-        bouton.setOnClickListener{
-            Firebase.auth.signOut()
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+        buttonNewDelivery.setOnClickListener{
+            startActivity(Intent(this, NewDelivery::class.java))
+        }
+
+        buttonDeliveryManagement.setOnClickListener{
+            startActivity(Intent(this, CityDeliveryManagement::class.java))
         }
     }
 

@@ -16,17 +16,21 @@ class NewClient : AppCompatActivity() {
         val buttonNewClient: Button = findViewById(R.id.button_new_user)
         val nameNewClient: EditText = findViewById(R.id.type_nv_client)
         val cityNewClient: EditText = findViewById(R.id.ville_nv_client)
+        val numNewClient: EditText = findViewById(R.id.num_nv_client)
+        val infosNewClient: EditText = findViewById(R.id.facultatif_nv_client)
 
         buttonNewClient.setOnClickListener {
-            val name: String = nameNewClient.text.toString().uppercase()
+            val type: String = nameNewClient.text.toString().uppercase()
             val city: String = cityNewClient.text.toString().uppercase()
+            val num: String = numNewClient.text.toString().uppercase()
+            val infos: String = infosNewClient.text.toString().uppercase()
 
-            if (name.isBlank())
-                Toast.makeText(this, "Merci de renseigner le nom !", Toast.LENGTH_SHORT).show()
-            else if (city.isBlank())
+            if (city.isBlank())
                 Toast.makeText(this, "Merci de renseigner la ville !", Toast.LENGTH_SHORT).show()
+            else if (num.isBlank())
+                Toast.makeText(this, "Merci de renseigner le numéro !", Toast.LENGTH_SHORT).show()
             else {
-                val client = Client(name, city)
+                val client = Client("$num $type $city", city, num, infos, type)
                 client.putInFirebase(this)
             }
         }

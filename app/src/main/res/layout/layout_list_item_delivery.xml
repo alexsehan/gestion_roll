@@ -7,8 +7,8 @@
     tools:context=".Accueil">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="350dp"
-        android:layout_height="81dp"
+        android:layout_width="356dp"
+        android:layout_height="71dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="5dp"
@@ -23,33 +23,23 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="2dp">
 
             <TextView
-                android:id="@+id/city_new_delivery"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/user_delivery"
+                android:layout_width="316dp"
+                android:layout_height="54dp"
+                android:gravity="center"
                 android:text="@string/variable_login_user_management"
+                android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/text_new_delivery"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.491" />
-
-            <TextView
-                android:id="@+id/text_new_delivery"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/nom"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.237"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.515" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

@@ -92,7 +92,9 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Merci de renseigner le mot-de-passe !", Toast.LENGTH_SHORT).show()
             else {
                 val login = loginBrut.plus("@serres.com")
-                if (isFirst) {
+                if(mdp.length < 6)
+                    Toast.makeText(this, "Le mot-de-passe renseigné doit être supérieur à 6 caractères !", Toast.LENGTH_SHORT).show()
+                else if (isFirst) {
                     db.collection("tempUsers").document(loginBrut).get()
                         .addOnSuccessListener { document ->
                             if (document.exists()) {

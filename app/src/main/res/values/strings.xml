@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">gestion_roll</string>
+    <string name="app_name">Gestion des Rolls</string>
     <string name="texte_titre">Connection</string>
     <string name="texte_login">Login</string>
     <string name="texte_mdp">Mot-de-passe</string>
@@ -10,8 +10,8 @@
     <string name="no">non</string>
     <string name="put_break">Vous ne pouvez pas accéder à l\'application car vous avez été mis en pause. Veuillez contacter un administrateur pour vous réactiver.</string>
 
-    <string name="texte_titre_nv_client">Nouveau magasin</string>
-    <string name="texte_type_nv_client">Nom du client</string>
+    <string name="texte_titre_nv_client">Nouveau client</string>
+    <string name="texte_type_nv_client">Type du client</string>
     <string name="texte_ville_nv_client">Ville du client</string>
     <string name="texte_bouton_nv_client">Enregistrer</string>
     <string name="point_d_interrogation">point d\'interrogation</string>
@@ -32,10 +32,10 @@
     <string name="text_isAdmin_user_management">Administrateur ?</string>
     <string name="texte_titre_user_management">Gestion des utilisateurs</string>
     <string name="line">_______________________________________________________________________________</string>
-    <string name="new_client">Gestion des clients</string>
+    <string name="new_client">Nouveau client</string>
     <string name="text_isBreak_user_management">Mis en pause ?</string>
-    <string name="mv_plestin">MV PLESTIN</string>
-    <string name="plestin_les_greves">PLESTIN-LES-GREVES</string>
+    <string name="mv_plestin">NOM</string>
+    <string name="plestin_les_greves">VILLE</string>
     <string name="text_title_new_delivery">Nouvelle livraison</string>
     <string name="button_new_delivery">Nouvelle livraison</string>
     <string name="choose">Choisir</string>
@@ -60,7 +60,7 @@
     <string name="find_driver">Trouver un chauffeur</string>
     <string name="nom">Nom :</string>
     <string name="welcome">Bienvenue !</string>
-    <string name="delivery_management">Gestion des livraisons</string>
+    <string name="delivery_management">Gestion des clients</string>
     <string name="title_activity_delivery_management">delivery_management</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -78,5 +78,12 @@
     <string name="client_name">Nom du client</string>
     <string name="recap_client">Récapitulatif client</string>
     <string name="see_all_deliveries">Voir toutes les livraisons</string>
+    <string name="num_ro_du_client">Numéro du client</string>
+    <string name="num_ro">NUMERO</string>
+    <string name="facultatif">Infos à ajouter ? (facultatif)</string>
+    <string name="infos">Infos</string>
+    <string name="param_trage">Paramétrages</string>
+    <string name="modify_client">Modifier un client</string>
+    <string name="save_history_deliveries">Télécharger l\'historique</string>
 
 </resources>

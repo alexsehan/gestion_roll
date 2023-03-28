@@ -7,6 +7,6 @@ import com.example.gestion_roll.R
 
 
 class ViewHolderNewDelivery(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    val text: TextView = itemView.findViewById(R.id.text_new_delivery)
-    val city: TextView = itemView.findViewById(R.id.city_new_delivery)
+    //val text: TextView = itemView.findViewById(R.id.date_delivery)
+    val city: TextView = itemView.findViewById(R.id.user_delivery)
 }

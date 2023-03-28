@@ -25,7 +25,7 @@
         android:id="@+id/texte_type_nv_client"
         android:layout_width="250dp"
         android:layout_height="35dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="@font/dm_sans"
         android:labelFor="@id/type_nv_client"
         android:text="@string/texte_type_nv_client"
@@ -36,20 +36,6 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/texte_titre" />
-
-    <EditText
-        android:id="@+id/type_nv_client"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="8dp"
-        android:autofillHints="username"
-        android:hint="@string/mv_plestin"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/texte_type_nv_client" />
 
     <TextView
         android:id="@+id/texte_ville_nv_client"
@@ -65,21 +51,96 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/type_nv_client" />
+        app:layout_constraintTop_toBottomOf="@+id/num_nv_client" />
 
     <EditText
         android:id="@+id/ville_nv_client"
         android:layout_width="250dp"
         android:layout_height="60dp"
-        android:layout_marginTop="12dp"
-        android:inputType="text"
-        android:hint="@string/plestin_les_greves"
+        android:layout_marginTop="8dp"
         android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/texte_ville_nv_client"
-        android:importantForAutofill="no" />
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/texte_num_nv_client"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/dm_sans"
+        android:labelFor="@id/num_nv_client"
+        android:text="@string/num_ro_du_client"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/type_nv_client" />
+
+    <EditText
+        android:id="@+id/num_nv_client"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:textColorHint="#757575"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texte_num_nv_client" />
+
+    <TextView
+        android:id="@+id/texte_facultatif_nv_client"
+        android:layout_width="282dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/dm_sans"
+        android:labelFor="@id/ville_nv_client"
+        android:text="@string/facultatif"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.639"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ville_nv_client" />
+
+    <EditText
+        android:id="@+id/facultatif_nv_client"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texte_facultatif_nv_client"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/type_nv_client"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="4dp"
+        android:autofillHints="username"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColorHint="#757575"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texte_type_nv_client"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <Button
         android:id="@+id/button_new_user"
@@ -88,9 +149,9 @@
         android:text="@string/texte_bouton_nv_client"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.839"
+        app:layout_constraintHorizontal_bias="0.849"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ville_nv_client"
-        app:layout_constraintVertical_bias="0.492" />
+        app:layout_constraintTop_toBottomOf="@+id/facultatif_nv_client"
+        app:layout_constraintVertical_bias="0.134" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

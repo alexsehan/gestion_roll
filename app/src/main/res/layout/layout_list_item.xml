@@ -26,7 +26,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/city_new_delivery"
+                android:id="@+id/user_delivery"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/variable_login_user_management"
@@ -50,7 +50,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/text_new_delivery"
+                app:layout_constraintStart_toEndOf="@+id/date_delivery"
                 app:layout_constraintTop_toBottomOf="@+id/isAdmin_user_management" />
 
             <TextView
@@ -69,7 +69,7 @@
                 app:layout_constraintVertical_bias="0.22" />
 
             <TextView
-                android:id="@+id/text_new_delivery"
+                android:id="@+id/date_delivery"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/text_isBreak_user_management"
