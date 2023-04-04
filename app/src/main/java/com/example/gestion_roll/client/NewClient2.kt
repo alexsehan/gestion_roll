@@ -1,17 +1,17 @@
 package com.example.gestion_roll.client
 
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import com.example.gestion_roll.R
 import com.example.gestion_roll.user.connection
 
-class NewClient : AppCompatActivity() {
+class NewClient2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_new_client)
+        setContentView(R.layout.activity_new_client2)
 
         val buttonNewClient: Button = findViewById(R.id.button_new_user)
         val nameNewClient: EditText = findViewById(R.id.type_nv_client)
@@ -41,4 +41,3 @@ class NewClient : AppCompatActivity() {
         connection(this)
     }
 }
-

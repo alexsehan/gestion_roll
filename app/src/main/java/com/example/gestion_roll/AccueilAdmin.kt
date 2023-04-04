@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.example.gestion_roll.client.NewClient
+import com.example.gestion_roll.client.NewClient2
 import com.example.gestion_roll.delivery.CityDeliveryManagement
 import com.example.gestion_roll.newDelivery.NewDelivery
 import com.example.gestion_roll.user.UserManagement
@@ -31,7 +31,7 @@ class AccueilAdmin : AppCompatActivity() {
         }
 
         buttonNewClient.setOnClickListener{
-            startActivity(Intent(this, NewClient::class.java))
+            startActivity(Intent(this, NewClient2::class.java))
         }
 
         buttonUserManagement.setOnClickListener{
